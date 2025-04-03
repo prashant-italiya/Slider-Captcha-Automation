@@ -16,6 +16,13 @@ A Python-based solution for automating slider captcha solving using YOLOv8 for p
 - GPU acceleration support for faster detection
 - Training notebook for custom model training
 
+## Test Environment
+
+You can test this software with the following slider captcha implementation:
+- [Slider Captcha Demo](https://codepen.io/piyushpd139/full/NWbdgwB)
+
+Note: The default screen positions in the code are calibrated for this specific implementation. If you're testing with a different captcha, you'll need to recalibrate the positions using the 'p' key.
+
 ## Prerequisites
 
 - Python 3.9 or higher
@@ -113,7 +120,7 @@ The trained model is saved in `runs/detect/puzzle_detector/weights/best.pt`
 
 ## Configuration
 
-The script uses predefined positions for the captcha elements. Update these positions based on your screen resolution:
+The script uses predefined positions for the captcha elements. These positions are calibrated for the test environment at [Slider Captcha Demo](https://codepen.io/piyushpd139/full/NWbdgwB). Update these positions based on your screen resolution:
 
 ```python
 refresh_button_position = (2137, 712)      # Position of refresh button
@@ -123,11 +130,12 @@ destination_puzzle_position = [1903, 750, 2108, 773]  # Destination area [x1, y1
 puzzle_position = [1677, 678, 490, 275]    # Full puzzle area [x1, y1, width, height]
 ```
 
-To calibrate positions:
-1. Run the script
-2. Press 'p' to print current mouse position
-3. Move your mouse to each element and note the coordinates
-4. Update the positions in the code
+To calibrate positions for a different captcha:
+1. Open the captcha in your browser
+2. Run the script
+3. Press 'p' to print current mouse position
+4. Move your mouse to each element and note the coordinates
+5. Update the positions in the code
 
 ## Usage
 
